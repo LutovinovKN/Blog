@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @news %>
+
+<h1><%= @new.title %></h1>
+
+<p><%= @new.content %></p>
+
+<p><%= @new.author %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@news) %></li>
+  <li><%= link_to "Destroy", article_path(@news), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Вы уверены?"
+                  } %></li>
+</ul>
+
+<div>
+  <%= link_to "Редактировать новость", edit_news_path(@news) %> |
+  <%= link_to "Вернуться", news_index_path %>
+
+  <%= button_to "Удалить новость", @news, method: :delete %>
+</div>

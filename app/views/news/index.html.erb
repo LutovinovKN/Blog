@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>News</h1>
+
+<div id="Новости">
+  <% @news.each do |news| %>
+    <li>
+      <a href="/Новости/<%= news.id %>">
+        <%= news.title %>
+      </a>
+    </li>
+
+    <li>
+      <a href="<%= new_path(news) %>">
+        <%= news.title %>
+      </a>
+    </li>
+
+
+    <li>
+      <%= link_to news.title, news %>
+    </li>
+
+    <li>
+      <%= link_to news.title, news %>
+    </li>
+
+
+    <%= render news %>
+    <p>
+      <%= link_to "Показать новости", news %>
+    </p>
+  <% end %>
+  
+</div>
+
+<%= link_to "Новая новость", new_news_path %>
